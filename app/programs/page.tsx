@@ -8,13 +8,13 @@ import BeHumanEmployment from "@/components/programs/BeHumanEmployment";
 import Footer from "@/components/home/Footer";
 
 export const metadata = {
-  title: "Programs",
+  title: "Our Programs | Village of Light for Children and the Elderly",
   description:
-    "Explore the programs from Yebirhan Lijoch Media focused on education, health, employment, and social care.",
+    "Explore the programs of Village of Light for Children and the Elderly (VLCE), including healthcare, education, social support, Bego Maed sponsorship, and employment creation.",
   openGraph: {
-    title: "Programs | Yebirhan Lijoch Media",
+    title: "Our Programs | Village of Light for Children and the Elderly",
     description:
-      "Explore the programs from Yebirhan Lijoch Media focused on education, health, employment, and social care.",
+      "Learn about VLCE's programs supporting children and older people through healthcare, education, social support, sponsorship, and livelihood opportunities.",
   },
 };
 
@@ -22,12 +22,16 @@ export default function ProgramsPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
-      <ProgramsHero />
-      <ComprehensiveHealth />
-      <Education />
-      <SocialSupport />
-      <BegoMaedSponsorship />
-      <BeHumanEmployment />
+
+      <main>
+        <ProgramsHero />
+        <ComprehensiveHealth />
+        <Education />
+        <SocialSupport />
+        <BegoMaedSponsorship />
+        <BeHumanEmployment />
+      </main>
+
       <Footer />
     </div>
   );

@@ -1,12 +1,11 @@
 import Image from "next/image";
-import { HeartPulse, BadgeCheck } from "lucide-react";
+import { HeartPulse, BadgeCheck, CheckCircle } from "lucide-react";
 
 const healthServices = [
-  "Medical Camps",
-  "Health Education",
-  "Maternal Care",
-  "Child Nutrition",
-  "Disease Prevention"
+  "Free medical treatment",
+  "Ear, eye & dental care for elderly people",
+  "Treatment for children affected by malnutrition and poor hygiene",
+  "Support for elderly people seeking health insurance"
 ];
 
 export default function ComprehensiveHealth() {
@@ -18,12 +17,12 @@ export default function ComprehensiveHealth() {
           <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden">
             <Image
               src="/photo_8_2026-08-06_20-40-36.jpg"
-              alt="Comprehensive Health"
+              alt="VLCE Healthcare Program"
               fill
               className="object-cover"
             />
           </div>
-          
+
           {/* Right Content */}
           <div className="space-y-6">
             {/* Badge */}
@@ -31,39 +30,53 @@ export default function ComprehensiveHealth() {
               <BadgeCheck size={20} />
               <span>Core Initiative</span>
             </div>
-            
+
             {/* Icon */}
             <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-secondary/10">
               <HeartPulse size={28} className="text-secondary" />
             </div>
-            
+
             {/* Heading */}
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-              Comprehensive Health
+              Healthcare
             </h2>
-            
+
             {/* Description */}
             <p className="text-lg text-foreground/70 leading-relaxed">
-              Our health programs provide essential medical services, preventive care, 
-              and health education to underserved communities. We believe that access to 
-              quality healthcare is a fundamental right that should be available to everyone, 
-              regardless of their economic status or geographic location.
+              Healthcare is one of the primary areas of focus for the Village
+              of Light for Children and the Elderly. VLCE works in
+              collaboration with various institutions to help children and
+              elderly people access the healthcare they need.
             </p>
-            
+
+            <p className="text-lg text-foreground/70 leading-relaxed">
+              For elderly people, the organization provides free medical
+              services, particularly for conditions commonly affecting older
+              adults, including ear, eye, and dental care. For children, VLCE
+              helps provide treatment for illnesses related to malnutrition and
+              poor hygiene.
+            </p>
+
             {/* Services List */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div className="space-y-3">
               {healthServices.map((service, index) => (
-                <div key={index} className="flex items-center gap-3">
-                  <div className="w-2 h-2 rounded-full bg-primary shrink-0" />
+                <div key={index} className="flex items-start gap-3">
+                  <CheckCircle
+                    size={20}
+                    className="text-primary shrink-0 mt-0.5"
+                  />
                   <span className="text-foreground/80">{service}</span>
                 </div>
               ))}
             </div>
-            
-            {/* CTA Button */}
-            <button className="bg-primary hover:bg-primary-dark text-background px-6 py-3 rounded-full font-semibold transition-colors">
-              Learn More
-            </button>
+
+            {/* Impact Statistic */}
+            <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+              <div className="text-4xl font-bold text-primary">567</div>
+              <p className="text-foreground/70 mt-1">
+                people have received free medical treatment to date
+              </p>
+            </div>
           </div>
         </div>
       </div>

@@ -1,49 +1,41 @@
-import Image from "next/image";
-import { Users, Globe, HeartHandshake, Award } from "lucide-react";
+import {
+  UtensilsCrossed,
+  Shirt,
+  GraduationCap,
+  Stethoscope,
+  Briefcase,
+} from "lucide-react";
 
-const leadership = [
+const metrics = [
   {
-    name: "Dr. Sarah Johnson",
-    role: "Executive Director",
-    image: "/photo_3_2026-08-06_20-40-36.jpg",
+    icon: UtensilsCrossed,
+    value: "6,000+",
+    label: "People served meals on various occasions",
   },
   {
-    name: "Michael Chen",
-    role: "Program Director",
-    image: "/photo_4_2026-08-06_20-40-36.jpg",
+    icon: Shirt,
+    value: "4,200",
+    label: "People provided with clothing assistance",
   },
   {
-    name: "Aisha Patel",
-    role: "Operations Lead",
-    image: "/photo_5_2026-08-06_20-40-36.jpg",
+    icon: GraduationCap,
+    value: "2,000+",
+    label: "Students who have received educational assistance and learning materials",
   },
   {
-    name: "David Williams",
-    role: "Community Outreach",
-    image: "/photo_6_2026-08-06_20-40-36.jpg",
-  },
-];
-
-const communityStats = [
-  {
-    icon: Users,
-    value: "50,000+",
-    label: "Community Members",
+    icon: GraduationCap,
+    value: "625",
+    label: "Students currently supported in their education",
   },
   {
-    icon: Globe,
-    value: "25+",
-    label: "Countries Served",
+    icon: Stethoscope,
+    value: "567",
+    label: "People who have received free medical treatment",
   },
   {
-    icon: HeartHandshake,
-    value: "500+",
-    label: "Local Partners",
-  },
-  {
-    icon: Award,
-    value: "15+",
-    label: "Awards Won",
+    icon: Briefcase,
+    value: "70",
+    label: "People experiencing homelessness supported through employment creation",
   },
 ];
 
@@ -51,63 +43,41 @@ export default function CommunityLeadership() {
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Our Community & Leadership
+            Our Community Impact
           </h2>
+
           <p className="text-xl text-foreground/70 max-w-3xl mx-auto">
-            Meet the dedicated team driving our mission and the communities
-            we&apos;re proud to serve around the world.
+            Every number represents a life touched, a hope restored, and a
+            community strengthened.
           </p>
         </div>
 
-        {/* Leadership Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {leadership.map((person, index) => (
+        {/* Impact Metrics */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {metrics.map((metric, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group"
+              className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow border border-gray-100"
             >
-              <div className="relative h-64 overflow-hidden">
-                <Image
-                  src={person.image}
-                  alt={person.name}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
-                />
+              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10 mb-4">
+                <metric.icon size={28} className="text-primary" />
               </div>
-              <div className="p-4">
-                <h3 className="text-lg font-bold text-foreground">
-                  {person.name}
-                </h3>
-                <p className="text-primary font-medium">{person.role}</p>
+
+              <div className="text-4xl font-bold text-foreground mb-2">
+                {metric.value}
               </div>
+
+              <p className="text-foreground/70 leading-relaxed">
+                {metric.label}
+              </p>
             </div>
           ))}
         </div>
 
-        {/* Community Stats */}
-        <div className="bg-white rounded-3xl p-8 md:p-12 shadow-lg">
-          <h3 className="text-2xl font-bold text-foreground text-center mb-8">
-            Our Community Impact
-          </h3>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {communityStats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4 mx-auto">
-                  <stat.icon size={32} className="text-primary" />
-                </div>
-                <div className="text-3xl font-bold text-foreground mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-foreground/70 font-medium">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );

@@ -1,20 +1,24 @@
+import Image from "next/image";
 import { GraduationCap, BookOpen, School, Users } from "lucide-react";
 
 const educationFeatures = [
   {
-    icon: BookOpen,
-    title: "Literacy Programs",
-    description: "Adult and child literacy initiatives to break the cycle of poverty"
+    icon: School,
+    title: "School Enrollment & Support",
+    description:
+      "Helping children from families who cannot afford their education enroll in school and continue their studies."
   },
   {
-    icon: School,
-    title: "School Support",
-    description: "Providing supplies, uniforms, and infrastructure for schools"
+    icon: BookOpen,
+    title: "Educational Materials",
+    description:
+      "Providing students with educational materials and school supplies to support their learning."
   },
   {
     icon: Users,
-    title: "Teacher Training",
-    description: "Professional development for educators in underserved areas"
+    title: "Tutorial & Remedial Classes",
+    description:
+      "Providing tutorial and remedial classes to help students improve their academic performance."
   }
 ];
 
@@ -29,28 +33,57 @@ export default function Education() {
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent-gold/10">
               <GraduationCap size={32} className="text-accent-gold" />
             </div>
-            
+
             {/* Heading */}
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
               Education
             </h2>
-            
+
             {/* Description */}
             <p className="text-lg text-foreground/70 leading-relaxed">
-              Education is the foundation of sustainable development. Our education programs 
-              focus on providing quality learning opportunities for children and adults alike, 
-              ensuring that knowledge becomes a tool for empowerment and social mobility.
+              Education is a key area of focus for the Village of Light for
+              Children and the Elderly. Believing that education is essential
+              for overcoming many of society&apos;s challenges, VLCE supports
+              families who are unable to afford their children&apos;s
+              education.
             </p>
-            
+
+            <p className="text-lg text-foreground/70 leading-relaxed">
+              The organization helps children enroll in school, provides
+              tutorial and remedial classes to improve academic performance,
+              and supplies educational materials and school supplies.
+            </p>
+
+            {/* Impact Statistics */}
+            <div className="grid grid-cols-2 gap-4 pt-2">
+              <div className="bg-primary/10 rounded-xl p-5">
+                <div className="text-3xl font-bold text-primary">2,000+</div>
+                <p className="text-sm text-foreground/70 mt-1">
+                  Students supported to date
+                </p>
+              </div>
+
+              <div className="bg-accent-gold/10 rounded-xl p-5">
+                <div className="text-3xl font-bold text-accent-gold">625</div>
+                <p className="text-sm text-foreground/70 mt-1">
+                  Students currently supported
+                </p>
+              </div>
+            </div>
+
             {/* Features */}
             <div className="space-y-4">
               {educationFeatures.map((feature, index) => (
-                <div key={index} className="flex gap-4 p-4 bg-gray-50 rounded-xl">
+                <div
+                  key={index}
+                  className="flex gap-4 p-4 bg-gray-50 rounded-xl"
+                >
                   <div className="shrink-0">
                     <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                       <feature.icon size={24} className="text-primary" />
                     </div>
                   </div>
+
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">
                       {feature.title}
@@ -63,13 +96,14 @@ export default function Education() {
               ))}
             </div>
           </div>
-          
+
           {/* Right Image */}
           <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden">
-            <img
+            <Image
               src="/photo_10_2026-08-06_20-40-36.jpg"
-              alt="Education Programs"
-              className="w-full h-full object-cover"
+              alt="VLCE Education Program"
+              fill
+              className="object-cover"
             />
           </div>
         </div>

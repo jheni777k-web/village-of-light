@@ -33,13 +33,13 @@ export default function WhoWeAre() {
             Who We Are
           </h2>
           <p className="text-xl text-foreground/70 max-w-3xl mx-auto">
-            We are a dedicated team of passionate individuals committed to creating 
+            We are a dedicated team of passionate individuals committed to creating
             sustainable change through innovative programs and community partnerships.
           </p>
         </div>
 
         {/* Values Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {values.map((value, index) => (
             <div
               key={index}
@@ -48,52 +48,16 @@ export default function WhoWeAre() {
               <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10 mb-4">
                 <value.icon size={28} className="text-primary" />
               </div>
+
               <h3 className="text-xl font-bold text-foreground mb-3">
                 {value.title}
               </h3>
+
               <p className="text-foreground/70">
                 {value.description}
               </p>
             </div>
           ))}
-        </div>
-
-        {/* Stats Section */}
-        <div className="bg-primary rounded-3xl p-8 md:p-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-4xl md:text-5xl font-bold text-background mb-2">
-                200+
-              </div>
-              <div className="text-background/90 font-medium">
-                Team Members
-              </div>
-            </div>
-            <div>
-              <div className="text-4xl md:text-5xl font-bold text-background mb-2">
-                100+
-              </div>
-              <div className="text-background/90 font-medium">
-                Partner Organizations
-              </div>
-            </div>
-            <div>
-              <div className="text-4xl md:text-5xl font-bold text-background mb-2">
-                95%
-              </div>
-              <div className="text-background/90 font-medium">
-                Funds to Programs
-              </div>
-            </div>
-            <div>
-              <div className="text-4xl md:text-5xl font-bold text-background mb-2">
-                4.9
-              </div>
-              <div className="text-background/90 font-medium">
-                Rating Score
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>

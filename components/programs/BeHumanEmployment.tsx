@@ -1,22 +1,38 @@
 import Image from "next/image";
-import { Briefcase, Scissors, Wheat, Wrench } from "lucide-react";
+import {
+  Briefcase,
+  Scissors,
+  Wheat,
+  Coffee,
+  Droplets,
+  Store,
+} from "lucide-react";
 
-const skills = [
+const employmentAreas = [
   {
     icon: Wheat,
     name: "Poultry Farming",
-    description: "Sustainable agricultural training and business support"
+  },
+  {
+    icon: Droplets,
+    name: "Shower & Bathing Services",
+  },
+  {
+    icon: Coffee,
+    name: "Tea & Coffee Businesses",
+  },
+  {
+    icon: Store,
+    name: "Public Toilet Services",
   },
   {
     icon: Scissors,
     name: "Tailoring",
-    description: "Sewing and garment production skills development"
   },
   {
-    icon: Wrench,
-    name: "Skill Building",
-    description: "Vocational training for various trades and crafts"
-  }
+    icon: Briefcase,
+    name: "Men's & Women's Hairdressing",
+  },
 ];
 
 export default function BeHumanEmployment() {
@@ -24,59 +40,110 @@ export default function BeHumanEmployment() {
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
           {/* Left Content */}
           <div className="space-y-6">
+
             {/* Icon */}
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10">
               <Briefcase size={32} className="text-primary" />
             </div>
-            
+
             {/* Heading */}
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-              &quot;Be Human&quot; Employment Project
+              &quot;Be Human&quot; Employment Creation Project
             </h2>
-            
+
             {/* Description */}
             <p className="text-lg text-foreground/70 leading-relaxed">
-              Our employment initiative provides vocational training and skill development 
-              programs that empower individuals to create sustainable livelihoods. By equipping 
-              people with marketable skills and connecting them with economic opportunities, 
-              we help break the cycle of poverty and build self-sufficient communities.
+              The Be Human Employment Creation Project recognizes that
+              sustainable employment is essential for people to become
+              self-reliant. The project creates job opportunities that enable
+              beneficiaries to earn a living using their skills and professions.
             </p>
-            
-            {/* Skills */}
-            <div className="space-y-4 pt-4">
-              {skills.map((skill, index) => (
-                <div key={index} className="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm">
-                  <div className="shrink-0 w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center">
-                    <skill.icon size={24} className="text-secondary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-1">
-                      {skill.name}
-                    </h3>
-                    <p className="text-foreground/70 text-sm">
-                      {skill.description}
-                    </p>
-                  </div>
+
+            {/* Impact Figures */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
+
+              <div>
+                <div className="text-3xl font-bold text-primary">
+                  70
                 </div>
-              ))}
+                <p className="text-foreground/70 mt-1">
+                  People experiencing homelessness provided with sustainable
+                  employment opportunities
+                </p>
+              </div>
+
+              <div>
+                <div className="text-3xl font-bold text-primary">
+                  50
+                </div>
+                <p className="text-foreground/70 mt-1">
+                  Additional people provided with employment opportunities
+                </p>
+              </div>
+
+              <div>
+                <div className="text-3xl font-bold text-primary">
+                  409,000+ ETB
+                </div>
+                <p className="text-foreground/70 mt-1">
+                  Invested in employment support for people experiencing
+                  homelessness
+                </p>
+              </div>
+
+              <div>
+                <div className="text-3xl font-bold text-primary">
+                  1M+ ETB
+                </div>
+                <p className="text-foreground/70 mt-1">
+                  Invested in livelihood initiatives overall
+                </p>
+              </div>
+
             </div>
-            
-            {/* CTA Button */}
-            <button className="bg-primary hover:bg-primary-dark text-background px-6 py-3 rounded-full font-semibold transition-colors">
-              Join Our Program
-            </button>
           </div>
-          
-          {/* Right Image */}
-          <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden">
-            <Image
-              src="/photo_12_2026-08-06_20-40-36.jpg"
-              alt="Be Human Employment Project"
-              fill
-              className="object-cover"
-            />
+
+          {/* Right Content */}
+          <div>
+
+            {/* Image */}
+            <div className="relative h-80 lg:h-96 overflow-hidden mb-8">
+              <Image
+                src="/photo_12_2026-08-06_20-40-36.jpg"
+                alt="Be Human Employment Creation Project"
+                fill
+                className="object-cover"
+              />
+            </div>
+
+            {/* Employment Areas */}
+            <div>
+              <h3 className="text-2xl font-semibold text-foreground mb-5">
+                Employment Areas
+              </h3>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
+                {employmentAreas.map((area, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center gap-3"
+                  >
+                    <area.icon
+                      size={20}
+                      className="text-primary shrink-0"
+                    />
+
+                    <span className="text-foreground/80">
+                      {area.name}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
           </div>
         </div>
       </div>

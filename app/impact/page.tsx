@@ -7,13 +7,13 @@ import BePartOfStory from "@/components/impact/BePartOfStory";
 import Footer from "@/components/home/Footer";
 
 export const metadata = {
-  title: "Impact",
+  title: "Our Impact | Village of Light for Children and the Elderly",
   description:
-    "See the impact of Yebirhan Lijoch Media through milestones, stories of hope, and community transformation.",
+    "Learn about the work of Village of Light for Children and the Elderly (VLCE) in education, healthcare, social support, and livelihood development.",
   openGraph: {
-    title: "Impact | Yebirhan Lijoch Media",
+    title: "Our Impact | Village of Light for Children and the Elderly",
     description:
-      "See the impact of Yebirhan Lijoch Media through milestones, stories of hope, and community transformation.",
+      "Learn about VLCE's work supporting children and older people through education, healthcare, social support, and livelihood opportunities.",
   },
 };
 
@@ -21,11 +21,15 @@ export default function ImpactPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
-      <ImpactHero />
-      <TransformingLives />
-      <DirectAid />
-      <JourneyOfHope />
-      <BePartOfStory />
+
+      <main>
+        <ImpactHero />
+        <TransformingLives />
+        <DirectAid />
+        <JourneyOfHope />
+        <BePartOfStory />
+      </main>
+
       <Footer />
     </div>
   );

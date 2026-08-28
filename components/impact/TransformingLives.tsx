@@ -1,35 +1,42 @@
-import { UtensilsCrossed, Shirt, GraduationCap, Stethoscope, Home, Users } from "lucide-react";
+import {
+  UtensilsCrossed,
+  Shirt,
+  GraduationCap,
+  Stethoscope,
+  Briefcase,
+  Users
+} from "lucide-react";
 
 const metrics = [
   {
     icon: UtensilsCrossed,
     value: "6,000+",
-    label: "Meals served daily through Agape (Table of Love)"
+    label: "People served meals on various occasions"
   },
   {
     icon: Shirt,
     value: "4,200",
-    label: "Persons received clothes and essential wear"
+    label: "People provided with clothing assistance"
   },
   {
     icon: GraduationCap,
     value: "2,000+",
-    label: "Students supported with educational materials (125 currently)"
+    label: "Students who have received educational assistance and learning materials"
+  },
+  {
+    icon: GraduationCap,
+    value: "625",
+    label: "Students currently supported in their education"
   },
   {
     icon: Stethoscope,
     value: "567",
-    label: "Individuals received free medical attention and care"
+    label: "People who have received free medical treatment"
   },
   {
-    icon: Home,
-    value: "70+",
-    label: "Homeless persons helped with rent and employment creation"
-  },
-  {
-    icon: Users,
-    value: "600+",
-    label: "Dedicated members, alongside 50 ambassadors driving our mission forward"
+    icon: Briefcase,
+    value: "70",
+    label: "People experiencing homelessness supported through employment creation"
   }
 ];
 
@@ -37,13 +44,16 @@ export default function TransformingLives() {
   return (
     <section className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Transforming Lives in Numbers
+            What Our Work Has Achieved
           </h2>
+
           <p className="text-xl text-foreground/70 max-w-3xl mx-auto">
-            Every number represents a life touched, a hope restored, and a community strengthened.
+            Our work supports children and older people through education,
+            healthcare, food, clothing, and livelihood opportunities.
           </p>
         </div>
 
@@ -52,20 +62,23 @@ export default function TransformingLives() {
           {metrics.map((metric, index) => (
             <div
               key={index}
-              className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow border border-gray-100"
+              className="bg-white p-6 shadow-lg hover:shadow-xl transition-shadow border border-gray-100"
             >
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10 mb-4">
+              <div className="inline-flex items-center justify-center w-14 h-14 bg-primary/10 mb-4">
                 <metric.icon size={28} className="text-primary" />
               </div>
+
               <div className="text-4xl font-bold text-foreground mb-2">
                 {metric.value}
               </div>
+
               <p className="text-foreground/70 leading-relaxed">
                 {metric.label}
               </p>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

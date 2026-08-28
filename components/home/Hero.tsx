@@ -65,9 +65,14 @@ export default function Hero() {
           />
           <div className="absolute inset-0 bg-black/40" />
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-center text-white px-4 max-w-4xl">
-              <h1 className="text-4xl md:text-6xl font-bold mb-4">{slide.title}</h1>
-              <p className="text-xl md:text-2xl mb-8">{slide.description}</p>
+            <div className="text-center px-4 max-w-4xl">
+  <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white">
+    {slide.title}
+  </h1>
+
+  <p className="text-xl md:text-2xl mb-8 text-black">
+    {slide.description}
+  </p>
               {/* <button className="bg-primary hover:bg-primary-dark text-background px-8 py-3 rounded-full font-semibold text-lg transition-colors">
                 Get Involved
               </button> */}

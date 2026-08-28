@@ -32,11 +32,13 @@ export default function CoreProgram() {
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Core Programs
           </h2>
+
           <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
             Our initiatives focus on sustainable development and community empowerment
           </p>
@@ -57,36 +59,24 @@ export default function CoreProgram() {
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
+
               <div className="p-6">
                 <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 mb-4">
                   <program.icon size={24} className="text-primary" />
                 </div>
+
                 <h3 className="text-2xl font-bold text-foreground mb-3">
                   {program.title}
                 </h3>
-                <p className="text-foreground/70 mb-4">
+
+                <p className="text-foreground/70">
                   {program.description}
                 </p>
-                <button className="text-primary font-semibold hover:text-primary-dark transition-colors flex items-center gap-2">
-                  Learn More
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </button>
               </div>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );
