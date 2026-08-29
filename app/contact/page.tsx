@@ -1,7 +1,6 @@
 import Navbar from "@/components/home/Navbar";
 import ContactHero from "@/components/contact/ContactHero";
 import ContactInfo from "@/components/contact/ContactInfo";
-import ContactForm from "@/components/contact/ContactForm";
 import Footer from "@/components/home/Footer";
 
 export const metadata = {
@@ -20,14 +19,13 @@ export default function ContactPage() {
     <div className="flex flex-col min-h-screen">
       <Navbar />
       <ContactHero />
+
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <ContactInfo />
-            <ContactForm />
-          </div>
+          <ContactInfo />
         </div>
       </section>
+
       <Footer />
     </div>
   );
