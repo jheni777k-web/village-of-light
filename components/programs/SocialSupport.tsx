@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import {
   HeartHandshake,
@@ -5,29 +7,83 @@ import {
   Shirt,
   Gift,
 } from "lucide-react";
-
-const supportServices = [
-  {
-    icon: UtensilsCrossed,
-    title: "Agape — Table of Love",
-    description:
-      "Through the Agape feeding program, elderly people receive one free meal each day at the organization.",
-  },
-  {
-    icon: Shirt,
-    title: "Clothing Assistance",
-    description:
-      "VLCE provides clothing to children and elderly people who need essential support.",
-  },
-  {
-    icon: Gift,
-    title: "Holiday Support",
-    description:
-      "Special assistance helps beneficiaries celebrate important holidays with their families.",
-  },
-];
+import { useLanguage } from "../LanguageContext";
 
 export default function SocialSupport() {
+  const { language } = useLanguage();
+
+  const text = {
+    en: {
+      title: "Social Support",
+
+      description:
+        "Children and elderly people often need daily support with food, clothing, and other basic necessities. VLCE provides practical assistance to help vulnerable people meet these needs and live with dignity.",
+
+      services: [
+        {
+          icon: UtensilsCrossed,
+          title: "Agape — Table of Love",
+          description:
+            "Through the Agape feeding program, elderly people receive one free meal each day at the organization.",
+        },
+        {
+          icon: Shirt,
+          title: "Clothing Assistance",
+          description:
+            "VLCE provides clothing to children and elderly people who need essential support.",
+        },
+        {
+          icon: Gift,
+          title: "Holiday Support",
+          description:
+            "Special assistance helps beneficiaries celebrate important holidays with their families.",
+        },
+      ],
+
+      clothing: "People provided with clothing",
+      holiday: "People receiving holiday support",
+      meals: "People served meals on various occasions",
+
+      imageAlt: "VLCE social support activities",
+    },
+
+    am: {
+      title: "ማህበራዊ ድጋፍ",
+
+      description:
+        "ህፃናትና አረጋውያን ብዙ ጊዜ ለምግብ፣ ለልብስ እና ለሌሎች መሰረታዊ ፍላጎቶች የዕለት ተዕለት ድጋፍ ያስፈልጋቸዋል። VLCE ተጋላጭ የሆኑ ሰዎች እነዚህን ፍላጎቶች እንዲያሟሉና በክብር እንዲኖሩ ተግባራዊ ድጋፍ ይሰጣል።",
+
+      services: [
+        {
+          icon: UtensilsCrossed,
+          title: "አጋፔ — የፍቅር ማዕድ",
+          description:
+            "በአጋፔ የምግብ አገልግሎት ፕሮግራም አረጋውያን በድርጅቱ በየቀኑ አንድ ነፃ ምግብ ያገኛሉ።",
+        },
+        {
+          icon: Shirt,
+          title: "የልብስ ድጋፍ",
+          description:
+            "VLCE አስፈላጊ ድጋፍ ለሚያስፈልጋቸው ህፃናትና አረጋውያን ልብስ ያቀርባል።",
+        },
+        {
+          icon: Gift,
+          title: "የበዓል ድጋፍ",
+          description:
+            "ልዩ ድጋፍ ተጠቃሚዎች አስፈላጊ በዓላትን ከቤተሰቦቻቸው ጋር በደስታ እንዲያከብሩ ያግዛል።",
+        },
+      ],
+
+      clothing: "የልብስ ድጋፍ ያገኙ ሰዎች",
+      holiday: "የበዓል ድጋፍ ያገኙ ሰዎች",
+      meals: "በተለያዩ አጋጣሚዎች ምግብ ያገኙ ሰዎች",
+
+      imageAlt: "የVLCE ማህበራዊ ድጋፍ እንቅስቃሴዎች",
+    },
+  };
+
+  const t = text[language];
+
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -37,7 +93,7 @@ export default function SocialSupport() {
           <div className="relative h-96 lg:h-[500px] overflow-hidden order-2 lg:order-1">
             <Image
               src="/photo_11_2026-08-06_20-40-36.jpg"
-              alt="VLCE social support activities"
+              alt={t.imageAlt}
               fill
               className="object-cover"
             />
@@ -48,26 +104,29 @@ export default function SocialSupport() {
 
             {/* Icon */}
             <div className="inline-flex items-center justify-center w-16 h-16 bg-secondary/10">
-              <HeartHandshake size={32} className="text-secondary" />
+              <HeartHandshake
+                size={32}
+                className="text-secondary"
+              />
             </div>
 
             {/* Heading */}
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-              Social Support
+              {t.title}
             </h2>
 
             {/* Description */}
             <p className="text-lg text-foreground/70 leading-relaxed">
-              Children and elderly people often need daily support with food,
-              clothing, and other basic necessities. VLCE provides practical
-              assistance to help vulnerable people meet these needs and live
-              with dignity.
+              {t.description}
             </p>
 
             {/* Services */}
             <div className="space-y-6 pt-2">
-              {supportServices.map((service, index) => (
-                <div key={index} className="flex gap-4 items-start">
+              {t.services.map((service, index) => (
+                <div
+                  key={index}
+                  className="flex gap-4 items-start"
+                >
                   <div className="shrink-0 w-11 h-11 bg-primary/10 flex items-center justify-center">
                     <service.icon
                       size={22}
@@ -96,7 +155,7 @@ export default function SocialSupport() {
                   4,200
                 </div>
                 <p className="text-sm text-foreground/70">
-                  People provided with clothing
+                  {t.clothing}
                 </p>
               </div>
 
@@ -105,7 +164,7 @@ export default function SocialSupport() {
                   3,600+
                 </div>
                 <p className="text-sm text-foreground/70">
-                  People receiving holiday support
+                  {t.holiday}
                 </p>
               </div>
 
@@ -114,7 +173,7 @@ export default function SocialSupport() {
                   6,000+
                 </div>
                 <p className="text-sm text-foreground/70">
-                  People served meals on various occasions
+                  {t.meals}
                 </p>
               </div>
 

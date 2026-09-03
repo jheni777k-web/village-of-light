@@ -1,27 +1,31 @@
 import Navbar from "@/components/home/Navbar";
 import Hero from "@/components/home/Hero";
-import OurImpact from "@/components/home/OurImpact";
 import CoreProgram from "@/components/home/CoreProgram";
+import OurImpact from "@/components/home/OurImpact";
 import Footer from "@/components/home/Footer";
 
 export const metadata = {
-  title: "Home",
+  title: "Village of Light for Children and the Elderly",
   description:
-    "Yebirhan Lijoch Media inspires action with mission-driven storytelling and community impact programs.",
+    "Village of Light for Children and the Elderly (VLCE) is a national non-profit humanitarian organization supporting vulnerable children and elderly people through education, healthcare, social support, sponsorship, and livelihood programs.",
   openGraph: {
-    title: "Home | Yebirhan Lijoch Media",
+    title: "Village of Light for Children and the Elderly",
     description:
-      "Yebirhan Lijoch Media inspires action with mission-driven storytelling and community impact programs.",
+      "Supporting vulnerable children and elderly people through education, healthcare, social support, sponsorship, and livelihood programs.",
   },
 };
 
-export default function Home() {
+export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
-      <Hero />
-      <OurImpact />
-      <CoreProgram />
+
+      <main>
+        <Hero />
+        <CoreProgram />
+        <OurImpact />
+      </main>
+
       <Footer />
     </div>
   );

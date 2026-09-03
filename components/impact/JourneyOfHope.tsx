@@ -1,39 +1,93 @@
-import { Calendar, CheckCircle } from "lucide-react";
+"use client";
 
-const milestones = [
-  {
-    year: "2012",
-    title: "VLCE Founded",
-    description:
-      "Village of Light for Children and the Elderly (VLCE) began operating on August 1, 2012, to assist children and older people living on the streets and in the vicinity of churches."
-  },
-  {
-    year: "2013",
-    title: "Holiday Assistance",
-    description:
-      "VLCE provided holiday assistance to vulnerable families, slaughtering 6 bulls for Christmas and 7 bulls for Easter and providing oil and meat to a total of 460 families."
-  },
-  {
-    year: "2014",
-    title: "Bego Maed Sponsorship Begins",
-    description:
-      "VLCE launched the Bego Maed Sponsorship Program to provide ongoing support to children and older people living in difficult circumstances."
-  },
-  {
-    year: "2022",
-    title: "Cash & Food Assistance",
-    description:
-      "VLCE provided 270 individuals with cash assistance of 800 Ethiopian Birr and one liter of oil each."
-  },
-  {
-    year: "2023",
-    title: "Holiday Support",
-    description:
-      "VLCE provided Christmas support to 50 people at a cost of 2,000 Ethiopian Birr per person. For Easter, financial assistance was provided to 390 individuals."
-  }
-];
+import { Calendar, CheckCircle } from "lucide-react";
+import { useLanguage } from "../LanguageContext";
 
 export default function JourneyOfHope() {
+  const { language } = useLanguage();
+
+  const text = {
+    en: {
+      title: "Our Journey",
+      description:
+        "Key milestones in VLCE's work supporting children and older people since 2012.",
+
+      milestones: [
+        {
+          year: "2012",
+          title: "VLCE Founded",
+          description:
+            "Village of Light for Children and the Elderly (VLCE) began operating on August 1, 2012, to assist children and older people living on the streets and in the vicinity of churches.",
+        },
+        {
+          year: "2013",
+          title: "Holiday Assistance",
+          description:
+            "VLCE provided holiday assistance to vulnerable families, slaughtering 6 bulls for Christmas and 7 bulls for Easter and providing oil and meat to a total of 460 families.",
+        },
+        {
+          year: "2014",
+          title: "Bego Maed Sponsorship Begins",
+          description:
+            "VLCE launched the Bego Maed Sponsorship Program to provide ongoing support to children and older people living in difficult circumstances.",
+        },
+        {
+          year: "2022",
+          title: "Cash & Food Assistance",
+          description:
+            "VLCE provided 270 individuals with cash assistance of 800 Ethiopian Birr and one liter of oil each.",
+        },
+        {
+          year: "2023",
+          title: "Holiday Support",
+          description:
+            "VLCE provided Christmas support to 50 people at a cost of 2,000 Ethiopian Birr per person. For Easter, financial assistance was provided to 390 individuals.",
+        },
+      ],
+    },
+
+    am: {
+      title: "የጉዞ ታሪካችን",
+      description:
+        "ከ2012 ዓ.ም. ጀምሮ VLCE ህፃናትንና አረጋውያንን በመደገፍ ያስመዘገባቸው ዋና ዋና ስኬቶች።",
+
+      milestones: [
+        {
+          year: "2012",
+          title: "VLCE ተመሰረተ",
+          description:
+            "የብርሃን ልጆች እና አረጋውያን ማህበር (VLCE) በነሐሴ 1 ቀን 2012 ዓ.ም. በመንገድ ላይ እና በአብያተ ክርስቲያናት አካባቢ የሚኖሩ ህፃናትንና አረጋውያንን ለመርዳት ሥራውን ጀመረ።",
+        },
+        {
+          year: "2013",
+          title: "የበዓል ድጋፍ",
+          description:
+            "VLCE ለተጋላጭ ቤተሰቦች የበዓል ድጋፍ አደረገ። ለገና 6 ኮርማዎች እና ለፋሲካ 7 ኮርማዎች በማረድ በድምሩ ለ460 ቤተሰቦች ዘይትና ስጋ አቀረበ።",
+        },
+        {
+          year: "2014",
+          title: "የቤጎ ማዕድ ስፖንሰርሺፕ ተጀመረ",
+          description:
+            "VLCE በአስቸጋሪ ሁኔታ ውስጥ ለሚኖሩ ህፃናትና አረጋውያን ቀጣይነት ያለው ድጋፍ ለመስጠት የቤጎ ማዕድ ስፖንሰርሺፕ ፕሮግራምን ጀመረ።",
+        },
+        {
+          year: "2022",
+          title: "የገንዘብ እና የምግብ ድጋፍ",
+          description:
+            "VLCE ለ270 ግለሰቦች እያንዳንዳቸው 800 የኢትዮጵያ ብር የገንዘብ ድጋፍ እና አንድ ሊትር ዘይት አቀረበ።",
+        },
+        {
+          year: "2023",
+          title: "የበዓል ድጋፍ",
+          description:
+            "VLCE ለ50 ሰዎች በአንድ ሰው 2,000 የኢትዮጵያ ብር ወጪ የገና ድጋፍ አደረገ። ለፋሲካ ደግሞ ለ390 ግለሰቦች የገንዘብ ድጋፍ ተደረገ።",
+        },
+      ],
+    },
+  };
+
+  const t = text[language];
+
   return (
     <section className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -41,16 +95,18 @@ export default function JourneyOfHope() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent-gold/10 mb-4 mx-auto">
-            <Calendar size={32} className="text-accent-gold" />
+            <Calendar
+              size={32}
+              className="text-accent-gold"
+            />
           </div>
 
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Our Journey
+            {t.title}
           </h2>
 
           <p className="text-xl text-foreground/70 max-w-3xl mx-auto">
-            Key milestones in VLCE&apos;s work supporting children and older
-            people since 2012.
+            {t.description}
           </p>
         </div>
 
@@ -62,11 +118,13 @@ export default function JourneyOfHope() {
 
           {/* Milestones */}
           <div className="space-y-12">
-            {milestones.map((milestone, index) => (
+            {t.milestones.map((milestone, index) => (
               <div
                 key={index}
                 className={`relative flex flex-col md:flex-row gap-6 ${
-                  index % 2 === 0 ? "md:flex-row-reverse" : ""
+                  index % 2 === 0
+                    ? "md:flex-row-reverse"
+                    : ""
                 }`}
               >
 
@@ -76,13 +134,18 @@ export default function JourneyOfHope() {
                 {/* Content */}
                 <div
                   className={`ml-20 md:ml-0 md:w-1/2 ${
-                    index % 2 === 0 ? "md:pr-12" : "md:pl-12"
+                    index % 2 === 0
+                      ? "md:pr-12"
+                      : "md:pl-12"
                   }`}
                 >
                   <div className="bg-gray-50 p-6 rounded-2xl">
 
                     <div className="flex items-center gap-3 mb-3">
-                      <CheckCircle size={20} className="text-primary" />
+                      <CheckCircle
+                        size={20}
+                        className="text-primary"
+                      />
 
                       <span className="text-2xl font-bold text-primary">
                         {milestone.year}

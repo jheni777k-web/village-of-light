@@ -1,8 +1,15 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { Mail, Phone, MapPin } from "lucide-react";
+import { useLanguage } from "@/components/LanguageContext";
 
 export default function Footer() {
+  const { language } = useLanguage();
+
+  const isAmharic = language === "am";
+
   return (
     <footer className="bg-foreground text-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -19,11 +26,9 @@ export default function Footer() {
             />
 
             <p className="text-background/80">
-              Village of Light for Children and the Elderly (VLCE) is a
-              national non-profit humanitarian organization working to
-              support vulnerable children and elderly people through
-              education, healthcare, social support, sponsorship, and
-              livelihood programs.
+              {isAmharic
+                ? "የብርሃን ልጆች ለህፃናትና ለአረጋውያን (VLCE) ብሔራዊ ያልተቋቋመ የሰብዓዊ እርዳታ ድርጅት ሲሆን፣ ተጋላጭ የሆኑ ህፃናትንና አረጋውያንን በትምህርት፣ በጤና አገልግሎት፣ በማህበራዊ ድጋፍ፣ በስፖንሰርሺፕ እና በኑሮ ማሻሻያ ፕሮግራሞች ለመደገፍ ይሰራል።"
+                : "Village of Light for Children and the Elderly (VLCE) is a national non-profit humanitarian organization working to support vulnerable children and elderly people through education, healthcare, social support, sponsorship, and livelihood programs."}
             </p>
 
             {/* Social Media */}
@@ -85,7 +90,9 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+            <h3 className="text-lg font-semibold mb-4">
+              {isAmharic ? "አጫጭር አገናኞች" : "Quick Links"}
+            </h3>
 
             <ul className="space-y-3">
               <li>
@@ -93,7 +100,7 @@ export default function Footer() {
                   href="/about"
                   className="text-background/80 hover:text-primary transition-colors"
                 >
-                  About Us
+                  {isAmharic ? "ስለ እኛ" : "About Us"}
                 </Link>
               </li>
 
@@ -102,7 +109,7 @@ export default function Footer() {
                   href="/programs"
                   className="text-background/80 hover:text-primary transition-colors"
                 >
-                  Our Programs
+                  {isAmharic ? "ፕሮግራሞቻችን" : "Our Programs"}
                 </Link>
               </li>
 
@@ -111,7 +118,7 @@ export default function Footer() {
                   href="/impact"
                   className="text-background/80 hover:text-primary transition-colors"
                 >
-                  Our Impact
+                  {isAmharic ? "ተጽዕኖአችን" : "Our Impact"}
                 </Link>
               </li>
 
@@ -120,7 +127,7 @@ export default function Footer() {
                   href="/contact"
                   className="text-background/80 hover:text-primary transition-colors"
                 >
-                  Contact Us
+                  {isAmharic ? "ያግኙን" : "Contact Us"}
                 </Link>
               </li>
 
@@ -129,7 +136,7 @@ export default function Footer() {
                   href="/donate"
                   className="text-background/80 hover:text-primary transition-colors"
                 >
-                  Support Us
+                  {isAmharic ? "ይደግፉን" : "Support Us"}
                 </Link>
               </li>
             </ul>
@@ -137,36 +144,40 @@ export default function Footer() {
 
           {/* Programs */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Our Programs</h3>
+            <h3 className="text-lg font-semibold mb-4">
+              {isAmharic ? "ፕሮግራሞቻችን" : "Our Programs"}
+            </h3>
 
             <ul className="space-y-3">
               <li>
                 <p className="text-background/80">
-                  Education Support
+                  {isAmharic ? "የትምህርት ድጋፍ" : "Education Support"}
                 </p>
               </li>
 
               <li>
                 <p className="text-background/80">
-                  Healthcare
+                  {isAmharic ? "የጤና አገልግሎት" : "Healthcare"}
                 </p>
               </li>
 
               <li>
                 <p className="text-background/80">
-                  Social Support
+                  {isAmharic ? "ማህበራዊ ድጋፍ" : "Social Support"}
                 </p>
               </li>
 
               <li>
                 <p className="text-background/80">
-                  Bego Maed Sponsorship
+                  {isAmharic ? "የቤጎ ማዕድ ስፖንሰርሺፕ" : "Bego Maed Sponsorship"}
                 </p>
               </li>
 
               <li>
                 <p className="text-background/80">
-                  Be Human Employment Creation
+                  {isAmharic
+                    ? "የቢ ሂዩማን የሥራ ዕድል ፈጠራ"
+                    : "Be Human Employment Creation"}
                 </p>
               </li>
             </ul>
@@ -174,7 +185,9 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
+            <h3 className="text-lg font-semibold mb-4">
+              {isAmharic ? "ያግኙን" : "Contact Us"}
+            </h3>
 
             <ul className="space-y-4">
 
@@ -185,7 +198,7 @@ export default function Footer() {
                 />
 
                 <span className="text-background/80">
-                  Addis Ababa, Ethiopia
+                  {isAmharic ? "አዲስ አበባ፣ ኢትዮጵያ" : "Addis Ababa, Ethiopia"}
                 </span>
               </li>
 
@@ -222,8 +235,10 @@ export default function Footer() {
         <div className="border-t border-background/20 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
 
           <p className="text-background/60 text-sm text-center md:text-left">
-            © {new Date().getFullYear()} Village of Light for Children and
-            the Elderly (VLCE). All rights reserved.
+            © {new Date().getFullYear()}{" "}
+            {isAmharic
+              ? "የብርሃን ልጆች ለህፃናትና ለአረጋውያን (VLCE)። መብቱ በሕግ የተጠበቀ ነው።"
+              : "Village of Light for Children and the Elderly (VLCE). All rights reserved."}
           </p>
 
         </div>

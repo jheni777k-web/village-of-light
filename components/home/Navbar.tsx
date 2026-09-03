@@ -4,10 +4,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useLanguage } from "@/components/LanguageContext";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+
+  const { language, setLanguage } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 40);
@@ -18,6 +21,27 @@ export default function Navbar() {
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const text = {
+    en: {
+      home: "Home",
+      about: "About",
+      programs: "Programs",
+      impact: "Impact",
+      contact: "Contact",
+      donate: "Donate Now",
+    },
+    am: {
+      home: "መነሻ",
+      about: "ስለ እኛ",
+      programs: "ፕሮግራሞች",
+      impact: "ተፅዕኖ",
+      contact: "ያግኙን",
+      donate: "አሁን ይለግሱ",
+    },
+  };
+
+  const t = text[language];
 
   return (
     <nav
@@ -48,36 +72,61 @@ export default function Navbar() {
               href="/"
               className="text-foreground hover:text-primary transition-colors font-medium"
             >
-              Home
+              {t.home}
             </Link>
 
             <Link
               href="/about"
               className="text-foreground hover:text-primary transition-colors font-medium"
             >
-              About
+              {t.about}
             </Link>
 
             <Link
               href="/programs"
               className="text-foreground hover:text-primary transition-colors font-medium"
             >
-              Programs
+              {t.programs}
             </Link>
 
             <Link
               href="/impact"
               className="text-foreground hover:text-primary transition-colors font-medium"
             >
-              Impact
+              {t.impact}
             </Link>
 
             <Link
               href="/contact"
               className="text-foreground hover:text-primary transition-colors font-medium"
             >
-              Contact
+              {t.contact}
             </Link>
+
+            {/* Language Switcher */}
+            <div className="flex items-center gap-1 border border-gray-200 rounded-full p-1">
+              <button
+                onClick={() => setLanguage("en")}
+                className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
+                  language === "en"
+                    ? "bg-primary text-black"
+                    : "text-foreground hover:bg-gray-100"
+                }`}
+              >
+                English
+              </button>
+
+              <button
+                onClick={() => setLanguage("am")}
+                className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
+                  language === "am"
+                    ? "bg-primary text-black"
+                    : "text-foreground hover:bg-gray-100"
+                }`}
+              >
+                አማርኛ
+              </button>
+            </div>
 
           </div>
 
@@ -86,7 +135,7 @@ export default function Navbar() {
             <button
               className="px-6 py-2.5 rounded-full font-medium transition-colors bg-primary text-black hover:bg-primary-dark"
             >
-              Donate Now
+              {t.donate}
             </button>
           </div>
 
@@ -98,6 +147,7 @@ export default function Navbar() {
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
+
         </div>
       </div>
 
@@ -111,7 +161,7 @@ export default function Navbar() {
               className="block text-foreground hover:text-primary transition-colors font-medium py-2"
               onClick={() => setIsMenuOpen(false)}
             >
-              Home
+              {t.home}
             </Link>
 
             <Link
@@ -119,7 +169,7 @@ export default function Navbar() {
               className="block text-foreground hover:text-primary transition-colors font-medium py-2"
               onClick={() => setIsMenuOpen(false)}
             >
-              About
+              {t.about}
             </Link>
 
             <Link
@@ -127,7 +177,7 @@ export default function Navbar() {
               className="block text-foreground hover:text-primary transition-colors font-medium py-2"
               onClick={() => setIsMenuOpen(false)}
             >
-              Programs
+              {t.programs}
             </Link>
 
             <Link
@@ -135,7 +185,7 @@ export default function Navbar() {
               className="block text-foreground hover:text-primary transition-colors font-medium py-2"
               onClick={() => setIsMenuOpen(false)}
             >
-              Impact
+              {t.impact}
             </Link>
 
             <Link
@@ -143,11 +193,39 @@ export default function Navbar() {
               className="block text-foreground hover:text-primary transition-colors font-medium py-2"
               onClick={() => setIsMenuOpen(false)}
             >
-              Contact
+              {t.contact}
             </Link>
 
-            <button className="w-full bg-primary hover:bg-primary-dark text-black px-6 py-2.5 rounded-full font-medium transition-colors mt-4">
-              Donate Now
+            {/* Mobile Language Switcher */}
+            <div className="flex items-center justify-center gap-2 pt-3">
+              <button
+                onClick={() => setLanguage("en")}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                  language === "en"
+                    ? "bg-primary text-black"
+                    : "border border-gray-200 text-foreground"
+                }`}
+              >
+                English
+              </button>
+
+              <button
+                onClick={() => setLanguage("am")}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                  language === "am"
+                    ? "bg-primary text-black"
+                    : "border border-gray-200 text-foreground"
+                }`}
+              >
+                አማርኛ
+              </button>
+            </div>
+
+            {/* Mobile Donate Button */}
+            <button
+              className="w-full bg-primary hover:bg-primary-dark text-black px-6 py-2.5 rounded-full font-medium transition-colors mt-4"
+            >
+              {t.donate}
             </button>
 
           </div>
