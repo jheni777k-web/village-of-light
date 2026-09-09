@@ -8,11 +8,11 @@ import Footer from "@/components/home/Footer";
 export const metadata = {
   title: "About",
   description:
-    "Learn about Yebirhan Lijoch Media's mission, leadership, and impact in local communities.",
+    "Learn about Village of Light's mission, leadership, and impact in local communities.",
   openGraph: {
     title: "About | Yebirhan Lijoch Media",
     description:
-      "Learn about Yebirhan Lijoch Media's mission, leadership, and impact in local communities.",
+      "Learn about Village of Light's mission, leadership, and impact in local communities.",
   },
 };
 

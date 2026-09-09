@@ -15,24 +15,24 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Yebirhan Lijoch Media",
-    template: "%s | Yebirhan Lijoch Media",
+    default: "Village of Light",
+    template: "%s | Village of Light",
   },
   description:
-    "Yebirhan Lijoch Media shares stories of community impact, education, health, and social support in Ethiopia.",
+    "Village of Light shares stories of community impact, education, health, and social support in Ethiopia.",
   openGraph: {
-    title: "Yebirhan Lijoch Media",
+    title: "Village of Light",
     description:
-      "Stories of hope, empowerment, and sustainable community development from Yebirhan Lijoch Media.",
+      "Stories of hope, empowerment, and sustainable community development from Village of Light.",
     type: "website",
     locale: "en_US",
-    siteName: "Yebirhan Lijoch Media",
+    siteName: "Village of Light",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Yebirhan Lijoch Media",
+    title: "Village of Light",
     description:
-      "Stories of hope, empowerment, and sustainable community development from Yebirhan Lijoch Media.",
+      "Stories of hope, empowerment, and sustainable community development from Village of Light .",
   },
   robots: {
     index: true,

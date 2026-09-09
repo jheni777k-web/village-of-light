@@ -18,7 +18,7 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="space-y-4">
             <Image
-              src="/logo.jpg"
+              src="/Vlogo.jpg"
               alt="Village of Light for Children and the Elderly Logo"
               width={150}
               height={50}

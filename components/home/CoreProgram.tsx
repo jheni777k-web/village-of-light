@@ -12,7 +12,7 @@ import { useLanguage } from "../LanguageContext";
 const programs = [
   {
     icon: BookOpen,
-    image: "/photo_8_2026-08-06_20-40-36.jpg",
+    image: "/Education2.jpg",
     en: {
       title: "Education Initiative",
       description:
@@ -26,7 +26,7 @@ const programs = [
   },
   {
     icon: HeartHandshake,
-    image: "/photo_10_2026-08-06_20-40-36.jpg",
+    image: "/healthcare2.jpg",
     en: {
       title: "Healthcare Access",
       description:

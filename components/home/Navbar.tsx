@@ -61,7 +61,7 @@ export default function Navbar() {
             onClick={() => setIsMenuOpen(false)}
           >
             <Image
-              src="/logo.jpg"
+              src="/home page logo.jpg"
               alt="Village of Light for Children and the Elderly Logo"
               width={150}
               height={50}

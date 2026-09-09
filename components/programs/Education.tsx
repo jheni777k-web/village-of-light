@@ -167,7 +167,7 @@ export default function Education() {
           {/* Right Image */}
           <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden">
             <Image
-              src="/photo_10_2026-08-06_20-40-36.jpg"
+              src="/Education.jpg"
               alt={t.imageAlt}
               fill
               className="object-cover"

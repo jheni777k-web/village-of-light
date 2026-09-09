@@ -7,7 +7,7 @@ import { useLanguage } from "../LanguageContext";
 
 const slides = [
   {
-    image: "/channels4_banner.png",
+    image: "/bg logo.jpg",
     en: {
       title: "",
       description: "",
