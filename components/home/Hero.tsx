@@ -89,7 +89,11 @@ export default function Hero() {
               src={slide.image}
               alt={content.title}
               fill
-              className="object-cover"
+              className={
+                index === 0
+                  ? "object-contain"
+                  : "object-cover"
+              }
               priority={index === 0}
             />
 
