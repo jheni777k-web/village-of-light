@@ -11,7 +11,7 @@ export default function ContactInfo() {
       title: "Get in Touch",
       addressTitle: "Address",
       address:
-        "Village of Light Community Center, Near St. Mary's Church, Addis Ababa, Ethiopia",
+        "We are located in the Deru Bolo compound, near Sor Amba Hotel, just up from St. George's Church (Arada) Addis Ababa, Ethiopia",
       phoneTitle: "Phone",
       emailTitle: "Email",
     },
@@ -19,7 +19,7 @@ export default function ContactInfo() {
       title: "ያግኙን",
       addressTitle: "አድራሻ",
       address:
-        "የብርሃን ልጆች እና አረጋውያን ማህበር ማህበረሰብ ማዕከል፣ ከቅድስት ማርያም ቤተክርስቲያን አቅራቢያ፣ አዲስ አበባ፣ ኢትዮጵያ",
+        "ከ(አራዳ) ቅዱስ ጊዮርጊስ ቤተ ክርስቲያን ከፍ ብሎ ሶር አምባ ሆቴል አጠገብ ደሩ ቦሎ ግቢ እንገኛለን።",
       phoneTitle: "ስልክ",
       emailTitle: "ኢሜይል",
     },
@@ -62,12 +62,17 @@ export default function ContactInfo() {
           </h3>
 
           <p className="text-foreground/70">
-            +251 11 123 4567
+            +251911234567
           </p>
 
           <p className="text-foreground/70">
-            +251 91 234 5678
+            +251912345678
           </p>
+
+          <p className="text-foreground/70">
+            +251977959595
+          </p>
+
         </div>
       </div>
 
@@ -83,7 +88,7 @@ export default function ContactInfo() {
           </h3>
 
           <p className="text-foreground/70">
-            contact@villageoflight.org
+            contact@https://village-of-light.vercel.app/about
           </p>
         </div>
       </div>
