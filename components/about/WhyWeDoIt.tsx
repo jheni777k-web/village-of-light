@@ -63,7 +63,7 @@ export default function WhyWeDoIt() {
           {/* Left Image */}
           <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden order-2 lg:order-1">
             <Image
-              src="/photo_2_2026-08-06_20-40-36.jpg"
+              src="/photo_2.jpg"
               alt={t.title}
               fill
               className="object-cover"
