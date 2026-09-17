@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { MapPin, Phone, Mail } from "lucide-react";
 import { useLanguage } from "../LanguageContext";
 
@@ -15,7 +14,6 @@ export default function ContactInfo() {
         "Village of Light Community Center, Near St. Mary's Church, Addis Ababa, Ethiopia",
       phoneTitle: "Phone",
       emailTitle: "Email",
-      imageAlt: "Community Gathering",
     },
     am: {
       title: "ያግኙን",
@@ -24,7 +22,6 @@ export default function ContactInfo() {
         "የብርሃን ልጆች እና አረጋውያን ማህበር ማህበረሰብ ማዕከል፣ ከቅድስት ማርያም ቤተክርስቲያን አቅራቢያ፣ አዲስ አበባ፣ ኢትዮጵያ",
       phoneTitle: "ስልክ",
       emailTitle: "ኢሜይል",
-      imageAlt: "የማህበረሰብ ስብሰባ",
     },
   };
 
@@ -89,16 +86,6 @@ export default function ContactInfo() {
             contact@villageoflight.org
           </p>
         </div>
-      </div>
-
-      {/* Image */}
-      <div className="relative h-64 rounded-2xl overflow-hidden mt-8">
-        <Image
-          src="/photo_4_2026-08-06_20-40-36.jpg"
-          alt={t.imageAlt}
-          fill
-          className="object-cover"
-        />
       </div>
     </div>
   );

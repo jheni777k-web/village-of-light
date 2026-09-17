@@ -7,7 +7,7 @@ import { useLanguage } from "../LanguageContext";
 
 const slides = [
   {
-    image: "/bg logo.jpg",
+    image: "/bg_logo.jpg",
     en: {
       title: "",
       description: "",
@@ -18,7 +18,7 @@ const slides = [
     },
   },
   {
-    image: "/photo_2_2026-08-06_20-40-36.jpg",
+    image: "/photo_2.jpg",
     en: {
       title: "Building Hope",
       description: "Creating opportunities for a brighter future",
@@ -29,7 +29,7 @@ const slides = [
     },
   },
   {
-    image: "/photo_3_2026-08-06_20-40-36.jpg",
+    image: "/photo_3.jpg",
     en: {
       title: "Sustainable Impact",
       description: "Long-term solutions for lasting change",
@@ -40,9 +40,9 @@ const slides = [
     },
   },
   {
-    image: "/photo_4_2026-08-06_20-40-36.jpg",
+    image: "/photo_4.jpg",
     en: {
-      title: "Global Reach",
+      title: "Wide Impact",
       description: "Making an impact across communities worldwide",
     },
     am: {
@@ -56,10 +56,11 @@ export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const { language } = useLanguage();
 
+  // Automatic slideshow
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 15000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
@@ -69,11 +70,13 @@ export default function Hero() {
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+    setCurrentSlide(
+      (prev) => (prev - 1 + slides.length) % slides.length
+    );
   };
 
   return (
-    <div className="relative h-screen w-full overflow-hidden">
+    <section className="relative h-screen w-full overflow-hidden">
       {/* Slides */}
       {slides.map((slide, index) => {
         const content = slide[language];
@@ -81,19 +84,18 @@ export default function Hero() {
         return (
           <div
             key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ${
-              index === currentSlide ? "opacity-100" : "opacity-0"
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              index === currentSlide
+                ? "opacity-100 z-10"
+                : "opacity-0 z-0"
             }`}
           >
             <Image
               src={slide.image}
-              alt={content.title}
+              alt={content.title || "Village of Light"}
               fill
-              className={
-                index === 0
-                  ? "object-contain"
-                  : "object-cover"
-              }
+              sizes="100vw"
+              className="object-cover"
               priority={index === 0}
             />
 
@@ -120,25 +122,26 @@ export default function Hero() {
         );
       })}
 
-      {/* Navigation Arrows */}
+      {/* Previous Button */}
       <button
         onClick={prevSlide}
         aria-label="Previous slide"
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-3 rounded-full transition-colors backdrop-blur-sm"
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 text-white p-3 rounded-full transition-colors backdrop-blur-sm"
       >
         <ChevronLeft size={24} />
       </button>
 
+      {/* Next Button */}
       <button
         onClick={nextSlide}
         aria-label="Next slide"
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-3 rounded-full transition-colors backdrop-blur-sm"
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 text-white p-3 rounded-full transition-colors backdrop-blur-sm"
       >
         <ChevronRight size={24} />
       </button>
 
       {/* Dots */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-3">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex space-x-3">
         {slides.map((_, index) => (
           <button
             key={index}
@@ -152,6 +155,6 @@ export default function Hero() {
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 }

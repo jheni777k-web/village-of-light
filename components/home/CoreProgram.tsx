@@ -54,7 +54,7 @@ const programs = [
   },
   {
     icon: GraduationCap,
-    image: "/photo_12_2026-08-06_20-40-36.jpg",
+    image: "/training.png",
     en: {
       title: "Skills Training",
       description:

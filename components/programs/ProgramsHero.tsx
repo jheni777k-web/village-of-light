@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { Target } from "lucide-react";
 import { useLanguage } from "../LanguageContext";
 
@@ -19,7 +18,6 @@ export default function ProgramsHero() {
 
       keyPrograms: "Key Programs",
       founded: "Founded",
-      imageAlt: "VLCE Programs and Initiatives",
     },
 
     am: {
@@ -33,7 +31,6 @@ export default function ProgramsHero() {
 
       keyPrograms: "ዋና ፕሮግራሞች",
       founded: "የተመሰረተበት ዓመት",
-      imageAlt: "የVLCE ፕሮግራሞች እና ተነሳሽነቶች",
     },
   };
 
@@ -42,11 +39,9 @@ export default function ProgramsHero() {
   return (
     <section className="relative bg-background py-20 md:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
-          {/* Left Content */}
-          <div className="space-y-6">
-
+        <div className="max-w-4xl mx-auto">
+          {/* Content */}
+          <div className="space-y-6 text-center">
             {/* Icon */}
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10">
               <Target size={32} className="text-primary" />
@@ -67,8 +62,7 @@ export default function ProgramsHero() {
             </p>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 gap-6 pt-6">
-
+            <div className="grid grid-cols-2 gap-6 pt-6 max-w-md mx-auto">
               <div className="bg-gray-50 p-4 rounded-xl">
                 <div className="text-2xl font-bold text-primary">
                   5
@@ -88,21 +82,8 @@ export default function ProgramsHero() {
                   {t.founded}
                 </div>
               </div>
-
             </div>
           </div>
-
-          {/* Right Image */}
-          <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden">
-            <Image
-              src="/photo_7_2026-08-06_20-40-36.jpg"
-              alt={t.imageAlt}
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
-
         </div>
       </div>
     </section>

@@ -6,11 +6,11 @@ import Footer from "@/components/home/Footer";
 export const metadata = {
   title: "Contact",
   description:
-    "Get in touch with Yebirhan Lijoch to learn more about our work or support our mission.",
+    "Get in touch with Village of Light to learn more about our work or support our mission.",
   openGraph: {
-    title: "Contact | Yebirhan Lijoch ",
+    title: "Contact | Village of Light",
     description:
-      "Get in touch with Yebirhan Lijoch to learn more about our work or support our mission.",
+    "Get in touch with Village of Light to learn more about our work or support our mission.",
   },
 };
 
