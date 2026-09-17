@@ -62,14 +62,6 @@ export default function ContactInfo() {
           </h3>
 
           <p className="text-foreground/70">
-            +251911234567
-          </p>
-
-          <p className="text-foreground/70">
-            +251912345678
-          </p>
-
-          <p className="text-foreground/70">
             +251977959595
           </p>
 
