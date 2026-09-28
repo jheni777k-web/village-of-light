@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-import { Sparkles } from "lucide-react";
 import { useLanguage } from "@/components/LanguageContext";
 
 export default function WhyWeDoIt() {
@@ -39,11 +37,13 @@ export default function WhyWeDoIt() {
       educationText:
         "እያንዳንዱ ልጅ ጥራት ያለው ትምህርት እንዲያገኝ እንሰራለን",
 
-      healthcareTitle: "የጤና አገልግሎት ለሁሉም ተደራሽ መሆን አለበት",
+      healthcareTitle:
+        "የጤና አገልግሎት ለሁሉም ተደራሽ መሆን አለበት",
       healthcareText:
         "በቂ የጤና አገልግሎት በማይደርሳቸው ማህበረሰቦች የጤና አገልግሎት ክፍተቶችን ለመሙላት እንሰራለን",
 
-      economicTitle: "ኢኮኖሚያዊ አቅም ማጎልበት ለውጥን ያመጣል",
+      economicTitle:
+        "ኢኮኖሚያዊ አቅም ማጎልበት ለውጥን ያመጣል",
       economicText:
         "ራስን ለመቻል የሚያስችሉ የሙያ ክህሎት ስልጠናዎችንና ሀብቶችን እናቀርባለን",
 
@@ -57,73 +57,62 @@ export default function WhyWeDoIt() {
 
   return (
     <section className="py-20 bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="space-y-8 text-center">
+          {/* Heading */}
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground">
+            {t.title}
+          </h2>
 
-          
+          {/* Description */}
+          <p className="text-lg text-foreground/70 leading-relaxed max-w-3xl mx-auto">
+            {t.description}
+          </p>
 
-          {/* Center Content */}
-          <div className="space-y-6 order-1 lg:order-2">
+          {/* Key Points */}
+          <div className="space-y-5 text-left max-w-3xl mx-auto">
+            {/* Education */}
+            <div className="flex items-start gap-4">
+              <div className="w-2 h-2 rounded-full bg-primary mt-2.5 shrink-0" />
+              <p className="text-foreground/80">
+                <strong className="text-foreground">
+                  {t.educationTitle}
+                </strong>{" "}
+                - {t.educationText}
+              </p>
+            </div>
 
-          
+            {/* Healthcare */}
+            <div className="flex items-start gap-4">
+              <div className="w-2 h-2 rounded-full bg-primary mt-2.5 shrink-0" />
+              <p className="text-foreground/80">
+                <strong className="text-foreground">
+                  {t.healthcareTitle}
+                </strong>{" "}
+                - {t.healthcareText}
+              </p>
+            </div>
 
-            {/* Heading */}
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground">
-              {t.title}
-            </h2>
+            {/* Economic Empowerment */}
+            <div className="flex items-start gap-4">
+              <div className="w-2 h-2 rounded-full bg-primary mt-2.5 shrink-0" />
+              <p className="text-foreground/80">
+                <strong className="text-foreground">
+                  {t.economicTitle}
+                </strong>{" "}
+                - {t.economicText}
+              </p>
+            </div>
 
-            {/* Description */}
-            <p className="text-lg text-foreground/70 leading-relaxed">
-              {t.description}
-            </p>
-
-            {/* Key Points */}
-            <div className="space-y-4">
-
-              {/* Education */}
-              <div className="flex items-start gap-4">
-                <div className="w-2 h-2 rounded-full bg-primary mt-2 shrink-0" />
-                <p className="text-foreground/80">
-                  <strong className="text-foreground">
-                    {t.educationTitle}
-                  </strong>{" "}
-                  - {t.educationText}
-                </p>
-              </div>
-
-              {/* Healthcare */}
-              <div className="flex items-start gap-4">
-                <div className="w-2 h-2 rounded-full bg-primary mt-2 shrink-0" />
-                <p className="text-foreground/80">
-                  <strong className="text-foreground">
-                    {t.healthcareTitle}
-                  </strong>{" "}
-                  - {t.healthcareText}
-                </p>
-              </div>
-
-              {/* Economic Empowerment */}
-              <div className="flex items-start gap-4">
-                <div className="w-2 h-2 rounded-full bg-primary mt-2 shrink-0" />
-                <p className="text-foreground/80">
-                  <strong className="text-foreground">
-                    {t.economicTitle}
-                  </strong>{" "}
-                  - {t.economicText}
-                </p>
-              </div>
-
-              {/* Sustainability */}
-              <div className="flex items-start gap-4">
-                <div className="w-2 h-2 rounded-full bg-primary mt-2 shrink-0" />
-                <p className="text-foreground/80">
-                  <strong className="text-foreground">
-                    {t.sustainabilityTitle}
-                  </strong>{" "}
-                  - {t.sustainabilityText}
-                </p>
-              </div>
-
+            {/* Sustainability */}
+            <div className="flex items-start gap-4">
+              <div className="w-2 h-2 rounded-full bg-primary mt-2.5 shrink-0" />
+              <p className="text-foreground/80">
+                <strong className="text-foreground">
+                  {t.sustainabilityTitle}
+                </strong>{" "}
+                - {t.sustainabilityText}
+              </p>
             </div>
           </div>
         </div>
@@ -131,3 +120,4 @@ export default function WhyWeDoIt() {
     </section>
   );
 }
+
