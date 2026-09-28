@@ -60,23 +60,12 @@ export default function WhyWeDoIt() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
-          {/* Left Image */}
-          <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden order-2 lg:order-1">
-            <Image
-              src="/photo_2.jpg"
-              alt={t.title}
-              fill
-              className="object-cover"
-            />
-          </div>
+          
 
-          {/* Right Content */}
+          {/* Center Content */}
           <div className="space-y-6 order-1 lg:order-2">
 
-            {/* Icon */}
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-secondary/10">
-              <Sparkles size={32} className="text-secondary" />
-            </div>
+          
 
             {/* Heading */}
             <h2 className="text-4xl md:text-5xl font-bold text-foreground">

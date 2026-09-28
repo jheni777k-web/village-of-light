@@ -18,10 +18,10 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="space-y-4">
             <Image
-              src="/Vlogo.jpg"
+              src="/home page logo.jpg"
               alt="Village of Light for Children and the Elderly Logo"
-              width={150}
-              height={50}
+              width={200}
+              height={100}
               className="h-12 w-auto"
             />
 
@@ -202,16 +202,25 @@ export default function Footer() {
                 </span>
               </li>
 
-              <li className="flex items-center gap-3">
-                <Phone
-                  size={20}
-                  className="text-primary shrink-0"
-                />
+              
+<li className="flex items-start gap-3">
+  <Phone
+    size={20}
+    className="text-primary shrink-0 mt-1"
+  />
 
-                <span className="text-background/80">
-                  +251 11 749 300
-                </span>
-              </li>
+  <div className="flex flex-col gap-1">
+    <span className="text-background/80">
+      +251 977959595
+    </span>
+
+    <span className="text-background/80">
+      +251 11749300
+    </span>
+  </div>
+</li>
+
+
 
               <li className="flex items-center gap-3">
                 <Mail

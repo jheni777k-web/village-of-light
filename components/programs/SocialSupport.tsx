@@ -92,7 +92,7 @@ export default function SocialSupport() {
           {/* Left Image */}
           <div className="relative h-96 lg:h-[500px] overflow-hidden order-2 lg:order-1">
             <Image
-              src="/photo_11_2026-08-06_20-40-36.jpg"
+              src="/Social Support.jpg"
               alt={t.imageAlt}
               fill
               className="object-cover"

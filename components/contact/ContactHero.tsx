@@ -8,12 +8,12 @@ export default function ContactHero() {
 
   const text = {
     en: {
-      title: "We'd Love to Hear From You",
+      title: "Contact Us!",
       description:
         "Have questions, suggestions, or want to get involved? Reach out to us and we'll get back to you as soon as possible. Together, we can make a difference in our community.",
     },
     am: {
-      title: "ከእርስዎ መስማት እንወዳለን",
+      title: "ያግኙን!",
       description:
         "ጥያቄ፣ አስተያየት አለዎት ወይም በሥራችን መሳተፍ ይፈልጋሉ? ያግኙን፤ በተቻለ ፍጥነት ምላሽ እንሰጥዎታለን። በአንድነት በመስራት በማህበረሰባችን ላይ አዎንታዊ ለውጥ ማምጣት እንችላለን።",
     },

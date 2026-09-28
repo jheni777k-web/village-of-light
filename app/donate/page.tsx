@@ -93,7 +93,7 @@ export default function DonatePage() {
         "VLCEን በየኢትዮጵያ ንግድ ባንክ ሂሳባችን በመለገስ ወይም ለፕሮግራሞቻችን የሚያገለግሉ ዕቃዎችንና ጊዜዎን በመስጠት መደገፍ ይችላሉ።",
 
       contactButton: "ያግኙን",
-      backHome: "ወደ መነሻ ይመለሱ",
+      backHome: "ወደ መግብያ ይመለሱ",
 
       impactTitle: "በአንድነት ለውጥ ማምጣት እንችላለን",
       impactText:
@@ -110,7 +110,7 @@ export default function DonatePage() {
       await navigator.clipboard.writeText(t.accountNumber);
       alert(t.copied);
     } catch {
-      // Clipboard may be unavailable in some browsers.
+      // Clipboard may belable in some browsers.
     }
   };
 

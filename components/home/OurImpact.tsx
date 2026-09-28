@@ -55,12 +55,6 @@ const impactStats = [
   },
 ];
 
-const impactImages = [
-  "/photo_5_2026-08-06_20-40-36.jpg",
-  "/photo_6_2026-08-06_20-40-36.jpg",
-  "/photo_7_2026-08-06_20-40-36.jpg",
-];
-
 export default function OurImpact() {
   const { language } = useLanguage();
 
@@ -121,23 +115,12 @@ export default function OurImpact() {
         </div>
 
         {/* Impact Images */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {impactImages.map((image, index) => (
-            <div
-              key={index}
-              className="relative h-64 rounded-2xl overflow-hidden"
-            >
-              <Image
-                src={image}
-                alt={`VLCE impact activity ${index + 1}`}
-                fill
-                className="object-cover hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-          ))}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">   
         </div>
 
       </div>
     </section>
   );
 }
+
+

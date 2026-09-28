@@ -65,6 +65,10 @@ export default function ContactInfo() {
             +251977959595
           </p>
 
+          <p className="text-foreground/70">
+            +251 11749300
+          </p>
+
         </div>
       </div>
 
@@ -80,7 +84,7 @@ export default function ContactInfo() {
           </h3>
 
           <p className="text-foreground/70">
-            contact@https://village-of-light.vercel.app/about
+            villageoflight2020@gmail.com
           </p>
         </div>
       </div>

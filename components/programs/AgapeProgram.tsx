@@ -56,28 +56,7 @@ const mealServices = [
   },
 ];
 
-const upcomingCommitments = [
-  {
-    partner: "Zain Catering",
-    people: "200",
-  },
-  {
-    partner: "Amnen Catering",
-    people: "100",
-  },
-  {
-    partner: "Nigist Agelgil",
-    people: "35",
-  },
-  {
-    partner: "Mimisho Catering",
-    people: "30",
-  },
-  {
-    partner: "Senay Catering",
-    people: "30",
-  },
-];
+
 
 export default function AgapeProgram() {
   const { language } = useLanguage();
@@ -108,14 +87,7 @@ export default function AgapeProgram() {
       inviteDescription:
         "You, too, can invite Birhan Lijoch's Agape Program to provide meals for weddings, birthdays, memorial feasts, or association gatherings.",
 
-      upcomingTitle: "Upcoming New Year Celebration",
-
-      upcomingDescription:
-        "August 30 — Meal service commitments in Addis Alem",
-
-      peopleCommitted: "people committed",
-
-      totalCommitted: "395 people committed to be served",
+      
     },
 
     am: {
@@ -156,7 +128,7 @@ export default function AgapeProgram() {
 
   const t = text[language];
 
-  return (
+  //return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -251,47 +223,15 @@ export default function AgapeProgram() {
           </div>
         </div>
 
-        {/* Upcoming New Year Service */}
-        <div>
-          <div className="text-center mb-8">
-            <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
-              {t.upcomingTitle}
-            </h3>
 
-            <p className="text-foreground/70">
-              {t.upcomingDescription}
-            </p>
-          </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
-            {upcomingCommitments.map((commitment, index) => (
-              <div
-                key={index}
-                className="bg-gray-50 rounded-2xl p-6 text-center"
-              >
-                <div className="text-3xl font-bold text-primary mb-2">
-                  {commitment.people}
-                </div>
-
-                <p className="font-medium text-foreground">
-                  {commitment.partner}
-                </p>
-
-                <p className="text-sm text-foreground/60 mt-1">
-                  {t.peopleCommitted}
-                </p>
-              </div>
-            ))}
-          </div>
+          
 
           <div className="text-center mt-8">
-            <p className="text-lg font-semibold text-foreground">
-              {t.totalCommitted}
-            </p>
+        
           </div>
         </div>
 
-      </div>
-    </section>
-  );
+    //</section>
+ // );
 }

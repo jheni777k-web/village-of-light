@@ -40,7 +40,7 @@ const programs = [
   },
   {
     icon: Sprout,
-    image: "/photo_11_2026-08-06_20-40-36.jpg",
+    image: "/Sustainable Dev.jpg",
     en: {
       title: "Sustainable Development",
       description:
