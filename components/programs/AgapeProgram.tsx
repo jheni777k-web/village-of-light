@@ -56,8 +56,6 @@ const mealServices = [
   },
 ];
 
-
-
 export default function AgapeProgram() {
   const { language } = useLanguage();
 
@@ -86,8 +84,6 @@ export default function AgapeProgram() {
 
       inviteDescription:
         "You, too, can invite Birhan Lijoch's Agape Program to provide meals for weddings, birthdays, memorial feasts, or association gatherings.",
-
-      
     },
 
     am: {
@@ -113,22 +109,13 @@ export default function AgapeProgram() {
       inviteTitle: "አጋፔ ፕሮግራሙን ወደ ዝግጅትዎ ይጋብዙ",
 
       inviteDescription:
-        "እርስዎም የብርሃን ልጆች አጋፔ ፕሮግራምን ወደ ሠርግ፣ የልደት በዓል፣ የመታሰቢያ ምሳ ወይም የማህበር ዝግጅትዎ በመጋበዝ ምግብ እንዲያቀርብ ማድረግ ይችላሉ።",
-
-      upcomingTitle: "የመጪው አዲስ ዓመት አከባበር",
-
-      upcomingDescription:
-        "ነሐሴ 30 — በአዲስ አለም የምግብ አገልግሎት ቃል ኪዳኖች",
-
-      peopleCommitted: "ምግብ ለማግኘት ቃል የገቡ ሰዎች",
-
-      totalCommitted: "በአጠቃላይ 395 ሰዎች ምግብ ለማግኘት ቃል ገብተዋል",
+        "እርስዎም የብርሃን ልጆች አጋፔ ፕሮግራምን ወደ ሠርግ፣ የልደት በዓል፣ የመታሰቢያ ምሳ ወይም የማህበር ዝግጅትዎ በመጋበዝ ምግብ እንዲያቀርብ ማድረግ ይችላሉፀ",
     },
   };
 
   const t = text[language];
 
-  //return (
+  return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -223,15 +210,7 @@ export default function AgapeProgram() {
           </div>
         </div>
 
-
-
-          
-
-          <div className="text-center mt-8">
-        
-          </div>
-        </div>
-
-    //</section>
- // );
+      </div>
+    </section>
+  );
 }
